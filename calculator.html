@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Calculator | Just for Fun</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #0b5ed7;
+      --card: #ffffff;
+      --primary: #2a5bd7;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --surface: #f3f4f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      width: min(420px, 100%);
+      padding: 1.75rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h1 span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2a5bd7, #7c3aed);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    a.back {
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .display {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 1rem;
+      font-size: 2rem;
+      text-align: right;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border: 1px solid #e5e7eb;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: #eef2ff;
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      box-shadow: 0 10px 24px rgba(42, 91, 215, 0.12);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    button.operator {
+      background: linear-gradient(135deg, #2a5bd7, #2563eb);
+      color: #fff;
+    }
+
+    button.equal {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #7c3aed, #2a5bd7);
+      color: #fff;
+    }
+
+    button.wide {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="Calculator">
+    <header>
+      <h1><span>JF</span> Calculator</h1>
+      <a class="back" href="./index.html" aria-label="Back to home">← Home</a>
+    </header>
+
+    <div class="display" role="status" aria-live="polite" id="display">0</div>
+
+    <div class="grid" aria-label="Calculator keypad">
+      <button type="button" class="wide" data-action="clear">AC</button>
+      <button type="button" data-action="delete">⌫</button>
+      <button type="button" class="operator" data-value="/">÷</button>
+
+      <button type="button" data-value="7">7</button>
+      <button type="button" data-value="8">8</button>
+      <button type="button" data-value="9">9</button>
+      <button type="button" class="operator" data-value="*">×</button>
+
+      <button type="button" data-value="4">4</button>
+      <button type="button" data-value="5">5</button>
+      <button type="button" data-value="6">6</button>
+      <button type="button" class="operator" data-value="-">−</button>
+
+      <button type="button" data-value="1">1</button>
+      <button type="button" data-value="2">2</button>
+      <button type="button" data-value="3">3</button>
+      <button type="button" class="operator" data-value="+">+</button>
+
+      <button type="button" data-value="0" class="wide">0</button>
+      <button type="button" data-value=".">.</button>
+      <button type="button" class="equal" data-action="calculate">=</button>
+    </div>
+  </main>
+
+  <script>
+    const display = document.getElementById('display');
+    let expression = '0';
+
+    const updateDisplay = (value) => {
+      expression = value;
+      display.textContent = value;
+    };
+
+    const appendValue = (value) => {
+      if (expression === '0' && value !== '.') {
+        updateDisplay(value);
+        return;
+      }
+
+      if (value === '.' && expression.split(/[-+*/]/).pop().includes('.')) {
+        return;
+      }
+
+      updateDisplay(expression + value);
+    };
+
+    const clearDisplay = () => updateDisplay('0');
+
+    const deleteLast = () => {
+      if (expression.length <= 1) {
+        clearDisplay();
+        return;
+      }
+      updateDisplay(expression.slice(0, -1));
+    };
+
+    const calculate = () => {
+      try {
+        const result = Function(`"use strict"; return (${expression})`)();
+        updateDisplay(String(result));
+      } catch (error) {
+        updateDisplay('Error');
+        setTimeout(() => clearDisplay(), 1200);
+      }
+    };
+
+    document.querySelectorAll('button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.value;
+        const action = button.dataset.action;
+
+        if (action === 'clear') return clearDisplay();
+        if (action === 'delete') return deleteLast();
+        if (action === 'calculate') return calculate();
+
+        appendValue(value);
+      });
+    });
+  </script>
+</body>
+</html>
