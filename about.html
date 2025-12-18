@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אודות – איך בניתי את זה</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #0b5ed7;
+      --card: #ffffff;
+      --primary: #2a5bd7;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      max-width: 760px;
+      width: 100%;
+      padding: 2rem;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h1 span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2a5bd7, #7c3aed);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .content {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    a.back {
+      justify-self: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      background: linear-gradient(135deg, #2a5bd7, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.24);
+    }
+
+    .signature {
+      font-weight: 600;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="אודות האתר">
+    <header>
+      <h1><span>או</span> אודות – איך בניתי את זה</h1>
+      <p>סיפור קצר על איך הכל התחבר כדי שאוכל לבנות אפליקציות ישר מהטלפון.</p>
+    </header>
+
+    <section class="content" aria-label="סיפור הבנייה">
+      <p>רציתי שתהיה לי את האפשרות לשחק עם יצירת אפליקציות דרך הטלפון ולא מצאתי פתרון מלא. Base44 נתן רק חלק מהתמונה, וגם בלי מנוי משלם הדברים נעצרו מהר.</p>
+      <p>אז עלה רעיון: להשתמש בקודקס של צ׳אטג׳יפיטי שיודע לכתוב קוד לבד, לחבר אותו לגיטהאב ופשוט להתחיל. כמובן שזה לא עבד על ההתחלה.</p>
+      <p>ניסיתי ליצור ריפו חדש והסנכרון בתוך קודקס לא הסתדר. אחרי כמה שאלות מול Comet של פרפלקסיטי הצלחתי לסנכרן, אבל אז קודקס פתח רק ענפים חדשים ולא עשה מרג׳ אוטומטי.</p>
+      <p>שאלתי את רוני והוא הציע להוסיף GitHub Action שעושה את המרג׳ לבד, וכתב לי את הקוד. עוד כמה הגדרות קטנות והופ – הכל עובד.</p>
+      <p>זו הייתה תקופה כיפית במיוחד: קצת GitHub Pages כדי שיהיה מה לראות, כי אני אוהב לעבוד על משהו שנראה בלייב, וככה בונים אתרים, אפליקציות ובכלל ווב.</p>
+      <p>וזה עובד!!</p>
+    </section>
+
+    <p class="signature">נכתב במקור על ידי יוחאי ונערך על ידי צאטגיפיטי.</p>
+
+    <a class="back" href="./index.html" aria-label="חזרה לדף הראשי">↩ חזרה לדף הראשי</a>
+  </main>
+</body>
+</html>
