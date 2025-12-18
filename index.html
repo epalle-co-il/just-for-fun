@@ -1,1 +1,164 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Just for Fun</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --primary: #2a5bd7;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(42, 91, 215, 0.08), transparent 25%),
+                  radial-gradient(circle at 80% 10%, rgba(255, 176, 58, 0.12), transparent 25%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      max-width: 720px;
+      width: 100%;
+      padding: 2rem;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h1 span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2a5bd7, #7c3aed);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .tile {
+      background: linear-gradient(180deg, rgba(42, 91, 215, 0.06), transparent);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1rem;
+      display: grid;
+      gap: 0.4rem;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    .tile h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .tile p {
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: linear-gradient(135deg, #2a5bd7, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      width: fit-content;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.24);
+    }
+
+    .cta:hover {
+      filter: brightness(1.05);
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="Just for Fun landing card">
+    <header>
+      <h1><span>JF</span> Just for Fun</h1>
+      <p>A playful starting point with a clean layout and a few ideas to spark inspiration.</p>
+    </header>
+
+    <section class="grid" aria-label="Highlights">
+      <article class="tile">
+        <h2>Quick Setup</h2>
+        <p>Start with a ready-made scaffold: semantic HTML, sensible defaults, and modern typography.</p>
+      </article>
+      <article class="tile">
+        <h2>Responsive by Default</h2>
+        <p>The layout adapts to any screen size with flexible grids and fluid typography.</p>
+      </article>
+      <article class="tile">
+        <h2>Lightweight Styles</h2>
+        <p>Vanilla CSS with a subtle gradient background keeps things simple and fresh.</p>
+      </article>
+    </section>
+
+    <a class="cta" href="#get-started">Get Started</a>
+
+    <footer id="get-started">
+      Crafted with care &mdash; tweak it, remix it, and make it your own.
+    </footer>
+  </main>
+</body>
+</html>
