@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">איור צבעוני של הכלבו של יחי</title>
+  <desc id="desc">איור ידני של חצר קיבוץ עם אנשים, כלב, ואופניים מול חנות הנושאת שלט הכלבו של יחי.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d5e6f0" />
+      <stop offset="70%" stop-color="#f7ecd7" />
+    </linearGradient>
+    <linearGradient id="ground" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#f1d9a9" />
+      <stop offset="100%" stop-color="#e2c290" />
+    </linearGradient>
+    <linearGradient id="awning" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#f09f34" />
+      <stop offset="50%" stop-color="#f6d153" />
+      <stop offset="100%" stop-color="#f09f34" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="#f3ede0" />
+  <rect width="1200" height="420" fill="url(#sky)" />
+  <rect y="420" width="1200" height="300" fill="url(#ground)" />
+
+  <g id="trees">
+    <g transform="translate(90 140)">
+      <rect x="-12" y="120" width="24" height="140" fill="#8b5a2b" />
+      <circle cx="0" cy="100" r="70" fill="#5ca56c" stroke="#3e7b3f" stroke-width="6" />
+    </g>
+    <g transform="translate(1050 130)">
+      <rect x="-12" y="130" width="24" height="140" fill="#8b5a2b" />
+      <circle cx="0" cy="110" r="70" fill="#5ca56c" stroke="#3e7b3f" stroke-width="6" />
+    </g>
+  </g>
+
+  <g id="storefront" transform="translate(80 230)">
+    <rect x="0" y="70" width="1040" height="210" fill="#d0c0a5" stroke="#7d6245" stroke-width="6" />
+    <rect x="-12" y="20" width="1064" height="50" fill="#7b889e" stroke="#445066" stroke-width="6" />
+    <rect x="-12" y="0" width="1064" height="22" fill="#94a6bf" />
+
+    <g id="awning-stripes">
+      <rect x="0" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="70" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="140" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="210" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="280" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="350" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="420" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="490" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="560" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="630" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="700" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="770" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="840" y="20" width="70" height="50" fill="#f09f34" />
+      <rect x="910" y="20" width="70" height="50" fill="#d86f52" />
+      <rect x="980" y="20" width="70" height="50" fill="#f09f34" />
+    </g>
+
+    <rect x="80" y="90" width="880" height="90" rx="12" fill="#2c5dad" stroke="#1f3f7a" stroke-width="5" />
+    <text x="520" y="152" font-family="'Arial Black', 'DejaVu Sans', sans-serif" font-size="64" fill="#f7f0e6" text-anchor="middle">הכלבו של יחי</text>
+  </g>
+
+  <g id="details" fill="#6f553a">
+    <rect x="900" y="480" width="90" height="90" rx="10" fill="#f7b336" stroke="#cf8e1a" stroke-width="6" />
+    <circle cx="220" cy="520" r="18" fill="#c25d8f" />
+    <circle cx="320" cy="520" r="18" fill="#c25d8f" />
+    <path d="M220 520 L280 480 L320 520" stroke="#c25d8f" stroke-width="10" fill="none" stroke-linecap="round" />
+  </g>
+
+  <g id="characters" stroke="#2d1c18" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(190 470)">
+      <circle cx="0" cy="-40" r="26" fill="#3a4b8f" />
+      <rect x="-24" y="-18" width="48" height="76" rx="8" fill="#5668b5" />
+      <rect x="-36" y="58" width="72" height="16" rx="6" fill="#c7b299" />
+    </g>
+    <g transform="translate(390 470)">
+      <circle cx="0" cy="-40" r="26" fill="#bf4a3a" />
+      <rect x="-24" y="-18" width="48" height="76" rx="8" fill="#d86f52" />
+      <rect x="-36" y="58" width="72" height="16" rx="6" fill="#c7b299" />
+    </g>
+    <g transform="translate(590 470)">
+      <circle cx="0" cy="-40" r="26" fill="#2c7b52" />
+      <rect x="-24" y="-18" width="48" height="76" rx="8" fill="#469b71" />
+      <rect x="-36" y="58" width="72" height="16" rx="6" fill="#c7b299" />
+    </g>
+    <g transform="translate(790 470)">
+      <circle cx="0" cy="-40" r="26" fill="#d38a2c" />
+      <rect x="-24" y="-18" width="48" height="76" rx="8" fill="#f0b13f" />
+      <rect x="-36" y="58" width="72" height="16" rx="6" fill="#c7b299" />
+    </g>
+  </g>
+
+  <g id="bike" transform="translate(180 550)" stroke="#c24c77" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="0" cy="0" r="34" />
+    <circle cx="110" cy="0" r="34" />
+    <path d="M0 0 L70 -50 L110 0" />
+    <path d="M70 -50 L70 -90" />
+  </g>
+
+  <g id="dog" transform="translate(990 560)">
+    <path d="M0 10 Q40 -20 80 10 Q60 40 20 40 Z" fill="#a9794d" stroke="#66452d" stroke-width="5" />
+    <circle cx="18" cy="-6" r="12" fill="#a9794d" stroke="#66452d" stroke-width="5" />
+    <circle cx="78" cy="-6" r="12" fill="#a9794d" stroke="#66452d" stroke-width="5" />
+  </g>
+
+  <text x="120" y="120" font-family="'Arial', 'DejaVu Sans', sans-serif" font-size="32" fill="#38516b">מרכז קטן מלא אהבה ואנשים טובים</text>
+</svg>
